@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''echo $GOPATH
+export XDG_CACHE_HOME=/tmp/.cache
 mkdir -p $GOPATH/src/github.com/rancher
 ln -s `pwd` $GOPATH/src/github.com/rancher/pipeline-example-go
 cd /go/src/github.com/rancher/pipeline-example-go
