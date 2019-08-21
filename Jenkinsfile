@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'python3 --version'
+        sh '''echo $GOPATH
+mkdir -p $GOPATH/src/github.com/rancher
+ln -s `pwd` $GOPATH/src/github.com/rancher/pipeline-example-go'''
       }
     }
   }
