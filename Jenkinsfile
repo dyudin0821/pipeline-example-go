@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'go version'
+        sh 'python3 --version'
       }
     }
   }
