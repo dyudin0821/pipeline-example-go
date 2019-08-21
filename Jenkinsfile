@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ip a'
+        sh 'ls -lah'
       }
     }
   }
