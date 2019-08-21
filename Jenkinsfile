@@ -16,5 +16,13 @@ cd /go/src/github.com/rancher/pipeline-example-go
 go build -o bin/hello-server'''
       }
     }
+    stage('Building image') {
+      steps {
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
+
+      }
+    }
   }
 }
