@@ -19,7 +19,7 @@ go build -o bin/hello-server'''
     stage('Building image') {
       steps {
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          docker.build "example-helloserver" + ":$BUILD_NUMBER"
         }
 
       }
