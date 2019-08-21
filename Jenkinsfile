@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ls -lah'
+        sh '''ls -lah
+pwd'''
       }
     }
   }
