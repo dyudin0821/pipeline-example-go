@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''ls -lah
-pwd'''
+        sh 'go version'
       }
     }
   }
