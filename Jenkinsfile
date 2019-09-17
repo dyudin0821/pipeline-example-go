@@ -3,6 +3,7 @@
 def container =  "${DOCKER_IMAGE}"
 
 node {
+  checkout scm
   // checkout([
   //   $class: 'GitSCM',
   //   branches: [[name: "*/${BRANCH}"]], 
