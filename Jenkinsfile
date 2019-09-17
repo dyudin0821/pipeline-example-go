@@ -5,7 +5,7 @@ def container =  "${DOCKER_IMAGE}"
 node {
   docker.image(container).inside{
     stage('Checkout'){
-      checkout scm
+      git branch: "${params.BRANCH}", url: 'https://github.com/dyudin0821/pipeline-example-go.git'
     }
     stage('Build'){
       sh '''echo $GOPATH
