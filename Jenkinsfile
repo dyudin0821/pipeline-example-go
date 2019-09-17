@@ -5,7 +5,7 @@ def container =  "${DOCKER_IMAGE}"
 node {
   docker.image(container).inside{
     stage('Checkout'){
-      git branch: "${params.BRANCH}", url: 'https://github.com/dyudin0821/pipeline-example-go.git'
+      checkout([$class: 'GitSCM', branches: [[name: "*/${BRANCH}"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'AuthorInChangelog']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd82dba23-c4f0-40e2-9165-576f0d4f3cae',, url: "https://github.com/dyudin0821/pipeline-example-go.git"]]])
     }
     stage('Build'){
       sh '''echo $GOPATH
